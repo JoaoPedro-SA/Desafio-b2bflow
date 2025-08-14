@@ -26,8 +26,8 @@
 
 2- faça o pip install do requeriments.txt
 
-2- execultar o servidor do arquivo z_api
+3- execultar o servidor do arquivo zapi.py
 
-3- execultar esse endpoint no Postman: POST => http://127.0.0.1:5000/send-text
+4- execultar esse endpoint no Postman: POST => http://127.0.0.1:5000/send-text
 
 O codigo já esta configurado para enviar a msg para o recrutador.
