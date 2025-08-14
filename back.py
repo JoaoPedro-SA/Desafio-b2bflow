@@ -1,8 +1,6 @@
 import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
-import time
-
 
 load_dotenv()
 
@@ -14,19 +12,6 @@ if not url or not key:
 
 supabase: Client = create_client(url, key)
 
-
-# Testando
-data = supabase.table("contacts").select("*").execute()
-print("Full response:", data)
-print("Data:", data.data)
-
-
-# while True:
-#      response = supabase.table("contacts").select("*").execute()
-#      print("Dados atuais:", response.data)
-#      time.sleep(5)
-
-
 response = (
     supabase.table("contacts")
     .select("*")
@@ -34,6 +19,16 @@ response = (
     
 )
 
-print(response.data)
-print(response.count)
+usuarios = []
+for contato in response.data:
+    usuarios.append({
+        "nome": contato["nome"],
+        "telefone": contato["telefone"]
+    })
 
+# João - Candidato
+#dados = usuarios[0]
+# Marcelo - Recrutador
+dados = usuarios[1]
+
+# print(dados)
